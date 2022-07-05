@@ -1,35 +1,50 @@
 # php-reverse-shell
 
 
-##################################Stabilize reverse Shell##################################
-#Do this on Kali, zsh shell gives error with turning enter in to ^M
-exec bash --login
+## Stabilize reverse Shell
 
-# Check if bash is active.
-ps -p $$ 
+-Do this on Kali, zsh shell gives error with turning enter in to ^M
 
-#get vars 
-echo $TERM
-stty -a 
+&emsp;&emsp;&emsp;&emsp;exec bash --login
 
-#Setup shell nc 
-nvlp -nc 4444
-$ python -c 'import pty; pty.spawn("/bin/bash")'
-Ctrl-Z
+-Check if bash is active.
 
-# In Kali
-$ stty raw -echo
-$ fg
+&emsp;&emsp;&emsp;&emsp;ps -p $$ 
 
-# In reverse shell
-$ reset
-$ export SHELL=bash
-$ export TERM=xterm-256color
-$ stty rows <num> columns <cols>
+-get vars 
+
+&emsp;&emsp;&emsp;&emsp;echo $TERM
+
+&emsp;&emsp;&emsp;&emsp;stty -a 
+
+-Setup shell nc 
+
+&emsp;&emsp;&emsp;&emsp;nvlp -nc 4444
+
+&emsp;&emsp;&emsp;&emsp;$ python -c 'import pty; pty.spawn("/bin/bash")'
+
+&emsp;&emsp;&emsp;&emsp;Ctrl-Z
+
+-In terminal
+
+&emsp;&emsp;&emsp;&emsp;$ stty raw -echo
+
+&emsp;&emsp;&emsp;&emsp;$ fg
+
+-In reverse shell
+
+&emsp;&emsp;&emsp;&emsp;$ reset
+
+&emsp;&emsp;&emsp;&emsp;$ export SHELL=bash
+
+&emsp;&emsp;&emsp;&emsp;$ export TERM=xterm-256color
+
+&emsp;&emsp;&emsp;&emsp;$ stty rows <num> columns <cols>
 
 
-#not always needed.
-export TERM=xterm
+-not always needed.
+  
+&emsp;&emsp;&emsp;&emsp;export TERM=xterm
   
   
   
